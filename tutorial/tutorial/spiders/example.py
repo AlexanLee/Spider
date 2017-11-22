@@ -25,12 +25,3 @@ class ExampleSpider(scrapy.Spider):
             item['views'] = question.xpath(".//div[contains(@class, 'views')]/@title").extract_first()
             item['tags'] = question.xpath(".//div[contains(@class, 'tags')]/a/text()").extract()
             yield item  
-           # yield {
-        #    'title': response.css('h3 a::text').extract()[0],
-            #'votes': response.css('.stats .vote-count-post::text').extract()[0],
-            #'body': response.css('.question .post-text').extract()[0],
-            #'tags': response.css('.question .post-tag::text').extract(),
-         #   'link': response.url,
-       # }
- #       print response.url
-#        print response.text
