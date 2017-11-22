@@ -7,3 +7,6 @@ scrapy crawl example
 
 cd JDSpider
 scrapy crawl JDSpider
+
+cd DouBanSpider
+scrapy crawl DouBan
