@@ -2,11 +2,11 @@
 初始化，创建爬虫项目：
 scrapy startproject tutorial
 
-cd tutorial
+cd tutorial <br>
 scrapy crawl example
 
-cd JDSpider
+cd JDSpider <br>
 scrapy crawl JDSpider
 
-cd DouBanSpider
+cd DouBanSpider <br>
 scrapy crawl DouBan
