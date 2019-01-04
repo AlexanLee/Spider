@@ -1,2 +1,2 @@
-# from scrapy import cmdline
-# cmdline.execute("scrapy crawl JDSpider".split())
+from scrapy import cmdline
+cmdline.execute("scrapy crawl JDSpider".split())

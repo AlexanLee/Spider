@@ -30,3 +30,35 @@ views,title,votes,answers,tags
 "1,121,674 views",What and where are the stack and heap?,6495,25,"memory-management,language-agnostic,stack,heap"
 "878,522 views","What does “use strict” do in JavaScript, and what is the reasoning behind it?",6153,26,"javascript,syntax,jslint,use-strict"
 "1,988,007 views",How do I check if an element is hidden in jQuery?,6126,49,"javascript,jquery,dom,visibility"
+answers,tags,title,views,votes
+19,"java,c++,performance,optimization,branch-prediction",Why is it faster to process a sorted array than an unsorted array?,"1,114,985 views",19825
+71,"git,git-commit,git-reset,git-revert",How to undo the last commits in Git?,"5,647,146 views",15822
+39,"git,git-branch,git-remote",How do I delete a Git branch both locally and remotely?,"4,935,834 views",12013
+41,"git,git-pull,git-fetch",What is the difference between 'git pull' and 'git fetch'?,"2,012,586 views",8911
+33,"json,content-type",What is the correct JSON content type?,"1,953,920 views",8496
+27,"git,git-commit,git-rewrite-history,amend","How to modify existing, unpushed commits?","2,126,825 views",7686
+88,"javascript,function,variables,scope,closures",How do JavaScript closures work?,"1,158,143 views",7661
+35,"python,iterator,generator,yield,coroutine",What does the “yield” keyword do?,"1,498,507 views",7308
+57,"javascript,jquery,redirect",How to redirect to another webpage?,"4,303,271 views",7245
+21,"c++,operators,code-formatting,standards-compliance",What is the “-->” operator in C++?,"561,212 views",7098
+47,"javascript,string,substring,contains,string-matching",How to check whether a string contains a substring in JavaScript?,"4,324,899 views",6900
+33,"git,version-control,git-stage",How to undo 'git add' before commit?,"1,894,663 views",6621
+25,"memory-management,language-agnostic,stack,heap",What and where are the stack and heap?,"1,123,051 views",6500
+26,"javascript,syntax,jslint,use-strict","What does “use strict” do in JavaScript, and what is the reasoning behind it?","879,465 views",6162
+49,"javascript,jquery,dom,visibility",How do I check if an element is hidden in jQuery?,"1,990,648 views",6134
+views,title,votes,answers,tags
+"1,115,015 views",Why is it faster to process a sorted array than an unsorted array?,19826,19,"java,c++,performance,optimization,branch-prediction"
+"5,647,435 views",How to undo the last commits in Git?,15823,71,"git,git-commit,git-reset,git-revert"
+"4,936,116 views",How do I delete a Git branch both locally and remotely?,12015,39,"git,git-branch,git-remote"
+"2,012,690 views",What is the difference between 'git pull' and 'git fetch'?,8911,41,"git,git-pull,git-fetch"
+"1,953,990 views",What is the correct JSON content type?,8497,33,"json,content-type"
+"2,126,886 views","How to modify existing, unpushed commits?",7686,27,"git,git-commit,git-rewrite-history,amend"
+"1,158,174 views",How do JavaScript closures work?,7661,88,"javascript,function,variables,scope,closures"
+"1,498,547 views",What does the “yield” keyword do?,7308,35,"python,iterator,generator,yield,coroutine"
+"4,303,448 views",How to redirect to another webpage?,7246,57,"javascript,jquery,redirect"
+"561,227 views",What is the “-->” operator in C++?,7098,21,"c++,operators,code-formatting,standards-compliance"
+"4,325,088 views",How to check whether a string contains a substring in JavaScript?,6900,47,"javascript,string,substring,contains,string-matching"
+"1,894,755 views",How to undo 'git add' before commit?,6621,33,"git,version-control,git-stage"
+"1,123,095 views",What and where are the stack and heap?,6500,25,"memory-management,language-agnostic,stack,heap"
+"879,498 views","What does “use strict” do in JavaScript, and what is the reasoning behind it?",6162,26,"javascript,syntax,jslint,use-strict"
+"1,990,725 views",How do I check if an element is hidden in jQuery?,6134,49,"javascript,jquery,dom,visibility"

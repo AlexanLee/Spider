@@ -63,3 +63,7 @@ target/
 
 *.DS_Store
 *.xls
+.idea
+tutorial/*.csv
+JDSpider/*.csv
+DouBanSpider/*.csv
