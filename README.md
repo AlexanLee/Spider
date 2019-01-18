@@ -1,6 +1,8 @@
 环境：
 python 2.7
 
+pip install scrapy
+
 初始化，创建爬虫项目：
 scrapy startproject tutorial
 

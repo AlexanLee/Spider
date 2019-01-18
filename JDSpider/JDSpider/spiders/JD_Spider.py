@@ -2,12 +2,15 @@
 
 __author__ = "Alexan"
 
-from scrapy.spiders import CrawlSpider
-from JDSpider.items import JdspiderItem
-from scrapy.selector import Selector
-from scrapy.http import Request
+import json
+import re
+
 import requests
-import re, json
+from JDSpider.items import JdspiderItem
+from scrapy.http import Request
+from scrapy.selector import Selector
+from scrapy.spiders import CrawlSpider
+
 
 class JdSpider(CrawlSpider):
     name = "JDSpider"

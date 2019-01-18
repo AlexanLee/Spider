@@ -11,9 +11,9 @@ import scrapy
 class TutorialItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    votes=scrapy.Field()
-    title=scrapy.Field()
-    answers=scrapy.Field()
-    views=scrapy.Field()
-    tags=scrapy.Field()
+    votes = scrapy.Field()
+    title = scrapy.Field()
+    answers = scrapy.Field()
+    views = scrapy.Field()
+    tags = scrapy.Field()
     pass
