@@ -6,7 +6,7 @@ import json
 import re
 
 import requests
-from JDSpider.items import JdspiderItem
+from SNSpider.items import JdspiderItem
 from scrapy.http import Request
 from scrapy.selector import Selector
 from scrapy.spiders import CrawlSpider
