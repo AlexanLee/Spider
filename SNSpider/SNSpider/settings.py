@@ -9,16 +9,16 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'JDSpider'
+BOT_NAME = 'SNSpider'
 
-SPIDER_MODULES = ['JDSpider.spiders']
-NEWSPIDER_MODULE = 'JDSpider.spiders'
+SPIDER_MODULES = ['SNSpider.spiders']
+NEWSPIDER_MODULE = 'SNSpider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
 
-FEED_URI = u'JDSpiderDoc.csv'
+FEED_URI = u'SNSpiderDoc.csv'
 FEED_FORMAT = 'CSV'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

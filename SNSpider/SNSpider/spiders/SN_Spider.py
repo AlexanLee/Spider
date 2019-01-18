@@ -6,19 +6,19 @@ import json
 import re
 
 import requests
-from SNSpider.items import JdspiderItem
+from SNSpider.items import SnspiderItem
 from scrapy.http import Request
 from scrapy.selector import Selector
 from scrapy.spiders import CrawlSpider
 
 
 class JdSpider(CrawlSpider):
-    name = "JDSpider"
-    redis_key = "JDSpider:start_urls"
+    name = "SNSpider"
+    redis_key = "SNSpider:start_urls"
     start_urls = ["http://book.jd.com/booktop/0-0-0.html?category=1713-0-0-0-10001-1#comfort"]
 
     def parse(self, response):
-        item = JdspiderItem()
+        item = SnspiderItem()
         selector = Selector(response)
         Books = selector.xpath('/html/body/div[8]/div[2]/div[3]/div/ul/li')
         for each in Books:

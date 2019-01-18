@@ -8,7 +8,7 @@
 import scrapy
 
 
-class JdspiderItem(scrapy.Item):
+class SnspiderItem(scrapy.Item):
     # define the fields for your item here like:
     #排名
     number = scrapy.Field()
