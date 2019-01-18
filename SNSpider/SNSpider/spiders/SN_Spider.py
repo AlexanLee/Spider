@@ -2,57 +2,34 @@
 
 __author__ = "Alexan"
 
-import json
-import re
-
-import requests
+# -*- coding: utf-8 -*-
+import scrapy
 from SNSpider.items import SnspiderItem
-from scrapy.http import Request
-from scrapy.selector import Selector
-from scrapy.spiders import CrawlSpider
 
 
-class SnSpider(CrawlSpider):
-    name = "SNSpider"
-    redis_key = "SNSpider:start_urls"
-    start_urls = ["https://pindao.suning.com/city/bingxi.html"]
+class SnSpider(scrapy.Spider):
+    name = 'SNSpider'
+    start_urls = ['https://pindao.suning.com/city/bingxi.html']
 
     def parse(self, response):
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'}
+        #       for href in response.css('.question-summary h3 a::attr(href)'):
+        #          full_url = response.urljoin(href.extract())
+        #         yield scrapy.Request(full_url,headers=headers,callback=self.parse_question)
+        for url in self.start_urls:
+            yield scrapy.Request(url, headers=headers, callback=self.parse_question)
+
+    def parse_question(self, response):
         item = SnspiderItem()
-        selector = Selector(response)
-        Items = selector.xpath('/html/body/div[6]/div[3]/div[3]/ul/li')
-        for each in Items:
-            title = each.xpath('/a/text()').extract()
-            print(title)
-            bookName = each.xpath('div[@class="p-detail"]/a/text()').extract()
-            author = each.xpath('div[@class="p-detail"]/dl[1]/dd/a[1]/text()').extract()
-            press = each.xpath('div[@class="p-detail"]/dl[2]/dd/a/text()').extract()
-
-            temphref = each.xpath('div[@class="p-detail"]/a/@href').extract()
-            temphref = str(temphref)
-            BookID = str(re.search('com/(.*?)\.html', temphref).group(1))
-
-            json_url = 'http://p.3.cn/prices/mgets?skuIds=J_' + BookID
-            r = requests.get(json_url).text
-            data = json.loads(r)[0]
-            price = data['m']
-            PreferentialPrice = data['p']
-
-            item['number'] = num
-            item['bookName'] = bookName
-            item['author'] = author
-            item['press'] = press
-            item['BookID'] = BookID
-            item['price'] = price
-            item['PreferentialPrice'] = PreferentialPrice
-
+        questions = response.css('li.scale good-box')
+        for question in questions:
+            item['votes'] = question.xpath(".//div[@class='votes']//strong/text()").extract_first()
+            item['title'] = question.xpath(
+                    ".//a[@class='question-hyperlink']/text()").extract_first()
+            item['answers'] = question.xpath(
+                    ".//div[ contains(@class, 'answered')]/strong/text()").extract_first()
+            item['views'] = question.xpath(
+                    ".//div[contains(@class, 'views')]/@title").extract_first()
+            item['tags'] = question.xpath(".//div[contains(@class, 'tags')]/a/text()").extract()
             yield item
-
-        nextLink = selector.xpath(
-            '/html/body/div[8]/div[2]/div[4]/div/div/span/a[7]/@href').extract()
-        if nextLink:
-            nextLink = nextLink[0]
-            import urlparse
-            nextLink = urlparse.urljoin(response.url, nextLink)
-            print(nextLink)
-            yield Request(nextLink, callback=self.parse)
