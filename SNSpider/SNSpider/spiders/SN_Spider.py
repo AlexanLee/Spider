@@ -24,8 +24,7 @@ class SnSpider(scrapy.Spider):
         item = SnspiderItem()
         questions = response.css('div.title-selling-point')
         for question in questions:
-            item['title'] = question.xpath("/a/text()").extract_first()
-            item['content'] = question.xpath("/a/text()").extract_first()
+            item['content'] = question.xpath("./a/text()").extract_first()
             # item['url'] = question.xpath(
             #         ".//div[ contains(@class, 'answered')]/strong/text()").extract_first()
             # item['tags'] = question.xpath(".//div[contains(@class, 'tags')]/a/text()").extract()
