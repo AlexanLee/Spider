@@ -15,14 +15,15 @@ from scrapy.spiders import CrawlSpider
 class SnSpider(CrawlSpider):
     name = "SNSpider"
     redis_key = "SNSpider:start_urls"
-    start_urls = ["http://book.jd.com/booktop/0-0-0.html?category=1713-0-0-0-10001-1#comfort"]
+    start_urls = ["https://pindao.suning.com/city/bingxi.html"]
 
     def parse(self, response):
         item = SnspiderItem()
         selector = Selector(response)
-        Books = selector.xpath('/html/body/div[8]/div[2]/div[3]/div/ul/li')
-        for each in Books:
-            num = each.xpath('div[@class="p-num"]/text()').extract()
+        Items = selector.xpath('/html/body/div[6]/div[3]/div[3]/ul/li')
+        for each in Items:
+            title = each.xpath('/a/text()').extract()
+            print(title)
             bookName = each.xpath('div[@class="p-detail"]/a/text()').extract()
             author = each.xpath('div[@class="p-detail"]/dl[1]/dd/a[1]/text()').extract()
             press = each.xpath('div[@class="p-detail"]/dl[2]/dd/a/text()').extract()
