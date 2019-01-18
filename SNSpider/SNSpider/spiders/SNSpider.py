@@ -12,7 +12,7 @@ from scrapy.selector import Selector
 from scrapy.spiders import CrawlSpider
 
 
-class JdSpider(CrawlSpider):
+class SNSpider(CrawlSpider):
     name = "SNSpider"
     redis_key = "SNSpider:start_urls"
     start_urls = ["http://book.jd.com/booktop/0-0-0.html?category=1713-0-0-0-10001-1#comfort"]
