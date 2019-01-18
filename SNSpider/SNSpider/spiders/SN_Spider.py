@@ -9,7 +9,7 @@ from SNSpider.items import SnspiderItem
 
 class SnSpider(scrapy.Spider):
     name = 'SNSpider'
-    start_urls = ['https://pindao.suning.com/city/bingxi.html']
+    start_urls = ['https://list.suning.com/0-20326-0.html']
 
     def parse(self, response):
         headers = {
@@ -22,14 +22,11 @@ class SnSpider(scrapy.Spider):
 
     def parse_question(self, response):
         item = SnspiderItem()
-        questions = response.css('li.scale good-box')
+        questions = response.css('div.title-selling-point')
         for question in questions:
-            item['votes'] = question.xpath(".//div[@class='votes']//strong/text()").extract_first()
-            item['title'] = question.xpath(
-                    ".//a[@class='question-hyperlink']/text()").extract_first()
-            item['answers'] = question.xpath(
-                    ".//div[ contains(@class, 'answered')]/strong/text()").extract_first()
-            item['views'] = question.xpath(
-                    ".//div[contains(@class, 'views')]/@title").extract_first()
-            item['tags'] = question.xpath(".//div[contains(@class, 'tags')]/a/text()").extract()
+            item['title'] = question.xpath("/a/text()").extract_first()
+            item['content'] = question.xpath("/a/text()").extract_first()
+            # item['url'] = question.xpath(
+            #         ".//div[ contains(@class, 'answered')]/strong/text()").extract_first()
+            # item['tags'] = question.xpath(".//div[contains(@class, 'tags')]/a/text()").extract()
             yield item
